@@ -13,7 +13,7 @@
    Lo copiás de Teachable Machine: Exportar modelo → TensorFlow.js → Subir.
    Ejemplo: "https://teachablemachine.withgoogle.com/models/abc123XYZ/"
    Si lo dejás vacío (""), la sección funciona en MODO DEMO (resultados simulados). */
-const URL_MODELO = "https://teachablemachine.withgoogle.com/models/rFAu5UI1b/";
+const URL_MODELO = "https://teachablemachine.withgoogle.com/models/[...]";
 
 
 /* PASO 2: conectá cada CLASE del modelo con un producto del catálogo
