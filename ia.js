@@ -13,7 +13,7 @@
    Lo copiás de Teachable Machine: Exportar modelo → TensorFlow.js → Subir.
    Ejemplo: "https://teachablemachine.withgoogle.com/models/abc123XYZ/"
    Si lo dejás vacío (""), la sección funciona en MODO DEMO (resultados simulados). */
-const URL_MODELO = "https://teachablemachine.withgoogle.com/models/[...]";
+const URL_MODELO = "https://teachablemachine.withgoogle.com/models/oVgNgUVqm/";
 
 
 /* PASO 2: conectá cada CLASE del modelo con un producto del catálogo
@@ -23,14 +23,16 @@ const URL_MODELO = "https://teachablemachine.withgoogle.com/models/[...]";
      (NO el orden de las clases en Teachable Machine).
    - null significa "no es un producto" (por ejemplo, la clase "Nada" o "Fondo"). */
 const clasesIA = {
-  "Torta de chocolate": 1,
-  "Cheesecake frutos rojos": 2,
-  "Lemon pie": 3,
-  "Medialuna": 4,
-  "Sandwiches de Miga ": 5,
-  "Pizzetas": 6,
-  "Cafe": 7,
-  "Limonada con menta": 8,
+  "Cartuchera": 1,
+  "Cuaderno": 2,
+  "Goma": 3,
+  "Hoja de color": 4,
+  "Lapicera ": 5,
+  "Lapiz": 6,
+  "Mochila": 7,
+  "Regla": 8,
+  "Tijera": 9,
+  "Voligoma": 10,
   "Nada": null
 };
 
@@ -38,61 +40,6 @@ const clasesIA = {
 /* PASO 3: qué tan seguro tiene que estar el modelo para mostrar un resultado
    0.8 = 80%. Si lo bajás, se equivoca más; si lo subís, contesta menos veces. */
 const CONFIANZA_MINIMA = 0.8;
-
-
-/* PASO 4: reseñas de clientes para cada producto
-   - La clave es el "id" del producto (el mismo número del PASO 2).
-   - "estrellas" va de 1 a 5.
-   - Cada grupo termina con ], (corchete y COMA). Si falta la coma, no anda nada.
-   - IMPORTANTE: en una web real usá opiniones REALES de clientes
-     (pediles permiso para publicarlas) y cambiá RESENAS_DE_EJEMPLO a false. */
-const RESENAS_DE_EJEMPLO = true;
-
-const resenas = {
-  // 1 = Torta de chocolate
-  1: [
-    { autor: "Valentina G.", estrellas: 5, texto: "La mejor torta de chocolate de Santa Fe. Húmeda, intensa y el ganache es un sueño." },
-    { autor: "Joaquín L.", estrellas: 5, texto: "La pedí para el cumple de mi vieja y no quedó ni una miga. Ya encargué otra." },
-    { autor: "Carla B.", estrellas: 4, texto: "Riquísima y súper bien presentada. Para mi gusto, un poquito dulce, pero la volvería a pedir." }
-  ],
-  // 2 = Cheesecake frutos rojos
-  2: [
-    { autor: "Lucía F.", estrellas: 5, texto: "Cremoso, con la base crocante justa y unos frutos rojos que levantan todo. Espectacular." },
-    { autor: "Martín A.", estrellas: 5, texto: "El mejor cheesecake que comí fuera de casa. Ni muy dulce ni muy ácido: perfecto." }
-  ],
-  // 3 = Lemon pie
-  3: [
-    { autor: "Sofía P.", estrellas: 5, texto: "El merengue es una nube y la crema de limón tiene el punto justo de acidez." },
-    { autor: "Diego C.", estrellas: 4, texto: "Fresco y riquísimo, ideal para después de un asado." }
-  ],
-  // 4 = Medialunas
-  4: [
-    { autor: "Tomás R.", estrellas: 5, texto: "Medialunas como las de antes: doraditas, con almíbar y bien de manteca." },
-    { autor: "Mariana S.", estrellas: 5, texto: "Llegaron calentitas a casa. El desayuno del domingo ya tiene dueño." },
-    { autor: "Nicolás P.", estrellas: 5, texto: "Esponjosas por dentro y crocantes por fuera. Impecables." }
-  ],
-  // 5 = Sándwiches de miga
-  5: [
-    { autor: "Martín R.", estrellas: 5, texto: "Los pedimos para un cumple y desaparecieron en minutos. Bien rellenos y con pan fresquito." },
-    { autor: "Paula V.", estrellas: 5, texto: "Súper prolijos y abundantes. Ya son infaltables en todos nuestros festejos." }
-  ],
-  // 6 = Pizzetas
-  6: [
-    { autor: "Gonzalo T.", estrellas: 5, texto: "Masa esponjosa y bien cargadas de queso. Los chicos las aman." },
-    { autor: "Romina L.", estrellas: 4, texto: "Riquísimas y llegaron calentitas. Las voy a pedir de nuevo." }
-  ],
-  // 7 = Café con leche
-  7: [
-    { autor: "Florencia D.", estrellas: 5, texto: "Cremoso, bien caliente y con una espuma perfecta. Mi café de todas las mañanas." },
-    { autor: "Agustín M.", estrellas: 4, texto: "Muy rico y la taza es enorme. Ideal para acompañar las medialunas." }
-  ],
-  // 8 = Limonada con menta
-  8: [
-    { autor: "Camila N.", estrellas: 5, texto: "Súper fresca y natural, con la menta justa. Ideal para los días de calor santafesino." },
-    { autor: "Bruno E.", estrellas: 5, texto: "Nada que ver con las de botella. Se nota que es casera." }
-  ]
-};
-
 
 /* ============ De acá para abajo no hace falta tocar nada ============ */
 
